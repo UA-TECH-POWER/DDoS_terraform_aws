@@ -46,6 +46,7 @@ resource "aws_instance" "ddos"  {
   instance_type = "t2.micro"
   user_data = <<EOF
   #!/bin/bash
+  sudo apt-get update -y
   sudo apt install docker.io -y
   sudo systemctl unmask docker.service
   sudo systemctl unmask docker.socket
