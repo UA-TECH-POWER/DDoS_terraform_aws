@@ -29,7 +29,7 @@ variable "link_ddos" {
 
 variable "kozaks" {
   description = "Скільки козаків пустити вбій(к-сть інстансів)"
-  type = string
+  type = numebr
 }
 
 resource "aws_instance" "ddos"  {
