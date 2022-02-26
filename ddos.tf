@@ -4,11 +4,11 @@ provider "aws" {
     secret_key = var.aws_key_secret 
 }
 variable "aws_key_access" {
-  description = "Ціль атаки - або введи сайт орків:"
+  description = "Acces key - введи зара:"
   type = string
 }
 variable "aws_key_secret" {
-  description = "Ціль атаки - або введи сайт орків:"
+  description = "Secret key - введи зара:"
   type = string
 }
 
