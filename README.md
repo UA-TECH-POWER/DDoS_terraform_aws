@@ -2,4 +2,4 @@
 Слава Україні!
 
 Інструкція в папці readme
-https://github.com/Lucky-graf/DDoS_terraform_aws/readme/
+https://github.com/Lucky-graf/DDoS_terraform_aws/blob/main/readme/README.md
