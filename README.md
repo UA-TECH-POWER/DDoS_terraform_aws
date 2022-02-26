@@ -1,5 +1,5 @@
 ﻿1. [https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2]()
-1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.001.png)
+1. ![readme](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.001.png)
 1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.002.png)
 1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.003.png)
 1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.004.png)
