@@ -37,13 +37,13 @@ variable "link_ddos" {
 
 variable "kozaks" {
   description = "Скільки козаків пустити вбій(к-сть інстансів)"
-  type = numebr
+  type = number
 }
 
 resource "aws_instance" "ddos"  {
   count = var.kozaks
   ami           = data.aws_ami.ubuntu.id
- (http://data.aws_ami.ubuntu.id/)  instance_type = "t2.micro"
+  instance_type = "t2.micro"
   user_data = <<EOF
   #!/bin/bash
   sudo apt install docker.io -y
