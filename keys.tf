@@ -4,7 +4,7 @@ resource "tls_private_key" "kozak" {
 }
 
 resource "local_file" "kozak" {
-  content  = tls_private_key.kozak.private_key_pem
-  filename = "${abspath(path.root)}/kozak_rsa"
+  content         = tls_private_key.kozak.private_key_pem
+  filename        = "${abspath(path.root)}/kozak_rsa"
   file_permission = "0400"
 }

@@ -1,24 +1,24 @@
 provider "aws" {
-    region = "us-east-2"
-    # access_key = ""#input_your
-    # secret_key = ""#input_your
+  region = "us-east-2"
+  # access_key = ""#input_your
+  # secret_key = ""#input_your
 }
 
 data "aws_ami" "ubuntu" {
 
-    most_recent = true
+  most_recent = true
 
-    filter {
-        name   = "name"
-        values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-    }
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
 
-    filter {
-        name = "virtualization-type"
-        values = ["hvm"]
-    }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
 
-    owners = ["099720109477"]
+  owners = ["099720109477"]
 }
 
 resource "aws_security_group" "webSG" {
@@ -28,7 +28,7 @@ resource "aws_security_group" "webSG" {
   ingress {
     from_port   = 22
     to_port     = 22
-    self = false
+    self        = false
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -41,15 +41,15 @@ resource "aws_security_group" "webSG" {
   }
 
   egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
 
   }
 }
 
-resource "aws_instance" "ddos"  {
+resource "aws_instance" "ddos" {
   count = var.kozaks
 
   ami                    = data.aws_ami.ubuntu.id
@@ -61,9 +61,9 @@ resource "aws_instance" "ddos"  {
     destination = "/tmp/script.sh"
   }
   connection {
-    type = "ssh"
-    host = self.public_ip
-    user = "ubuntu"
+    type        = "ssh"
+    host        = self.public_ip
+    user        = "ubuntu"
     private_key = tls_private_key.kozak.private_key_pem
   }
   provisioner "remote-exec" {
@@ -75,7 +75,7 @@ resource "aws_instance" "ddos"  {
 }
 
 
-resource "aws_key_pair" "kozak"{
-  key_name = "kozak"
+resource "aws_key_pair" "kozak" {
+  key_name   = "kozak"
   public_key = tls_private_key.kozak.public_key_openssh
 }
