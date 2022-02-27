@@ -75,7 +75,7 @@ resource "aws_instance" "ddos"  {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/script.sh",
-      "sudo bash /tmp/script.sh",
+      "sudo bash /tmp/script.sh &",
     ]
   }
 }
