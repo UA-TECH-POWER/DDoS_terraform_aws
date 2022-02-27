@@ -1,0 +1,16 @@
+.idea
+
+# apple
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+**/terraform.tfstate*
+**/*.tfplan
+**/.terraform/*
+**/.terraform.lock.hcl
+
+
+# SSH key
+kozak_rsa
