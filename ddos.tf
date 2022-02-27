@@ -1,7 +1,7 @@
 provider "aws" {
     region = "us-east-2"
-    access_key = ""#input_your
-    secret_key = ""#input_your
+    # access_key = ""#input_your
+    # secret_key = ""#input_your
 }
 
 data "aws_ami" "ubuntu" {
@@ -49,28 +49,22 @@ resource "aws_security_group" "webSG" {
   }
 }
 
-variable "kozaks" {
-  description = "Скільки козаків пустити вбій(к-сть інстансів)"
-  type = number
-  default = "1"
-}
-
-
 resource "aws_instance" "ddos"  {
   count = var.kozaks
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
+
+  ami                    = data.aws_ami.ubuntu.id
+  instance_type          = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.webSG.id}"]
-  key_name = "aws_key"
+  key_name               = aws_key_pair.kozak.key_name
   provisioner "file" {
-    source      = "/home/ubuntu/DDoS_terraform_aws/script.sh"
+    source      = "${abspath(path.root)}/script.sh"
     destination = "/tmp/script.sh"
   }
   connection {
     type = "ssh"
     host = self.public_ip
     user = "ubuntu"
-    private_key = file("/home/ubuntu/DDoS_terraform_aws/aws_key")
+    private_key = tls_private_key.kozak.private_key_pem
   }
   provisioner "remote-exec" {
     inline = [
@@ -81,7 +75,7 @@ resource "aws_instance" "ddos"  {
 }
 
 
-resource "aws_key_pair" "deploy"{
-  key_name = "aws_key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCpCfKMTNs1r0o73dXjnkriqqcDgMDbaog8xI+yeSp7o5B5rur5ODavFXtGTcRV+8wIxv9iZ4bpv7pPAUHx+/OK/ACg1z/s3jTxVchI517e4e5ZKfUCbgydZOnBIBUYfRXECCUnZXe0SBRmQO0h8                                                                                                                                                                                                                                                                                                                                                 disuke/FqyKDIaSOjp1kYlMI+b9DyWIRFK3GIdwmaZd0D2tu4pGg8lhDL94qE3P0c+pm2UfL6cjVWFIlfLgBli7KzmAjHzbcnI9f9vuwOt/X0p3hSDkrbUvk9w9LEKi7KjJ4y/dscSjD//ukqOE8wO3C6Yvpt7UEGJGtco82RWm0AsYHVHzDdVKG8nrCDotJVSK++kHeB                                                                                                                                                                                                                                                                                                                                                 /YfQItsH2/pj+/8XnMng7aupqZubUDQedtHkxVN1YLM3/aUqBCBlyK3lgeeRUBu6X78Pfbc9FQQLaaKzFZCunrVa9O5W7dMPrWYrmCi+C17sp/qJPR+5F0GzU481g/dbROxpmKuUCJ942B+PHNoKka+dYDW9S/sFMDEmfu/JMoN18Ot4aDultAR1+E7VlVoB+Km0SD6jH                                                                                                                                                                                                                                                                                                                                                 wplbh4j36yTDW/g23xnovxNpcJWviFaxjkxRdnHZxSvRmKbUicBarWlZB36yGlpuzqmXSNm2ASisEgT6ZvgeyvMjZjsqmY9Nir8xmMeipbOGPQnXxTMTaASON3l90pSmrT2i4LQ== ubuntu@ip-172-31-19-247"
+resource "aws_key_pair" "kozak"{
+  key_name = "kozak"
+  public_key = tls_private_key.kozak.public_key_openssh
 }
