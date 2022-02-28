@@ -1,37 +1,42 @@
-﻿1. [https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2]()
-1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.001.png)
-1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.002.png)
-1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.003.png)
-1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.004.png)
-1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.005.png)
-1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.006.png)
-1. Скачуємо ssh key
-1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.007.png)
-1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.008.png)
-1. Клікаємо ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.009.png)
-1. Копіюємо ІР ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.010.png)
-1. Скачуємо термінал для підключення <https://mobaxterm.mobatek.net/download-home-edition.html> ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.011.png)
-1. Відкриваємо MobaXTerm  
+﻿# DDOS via AWS 
 
-![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.012.png)
+## Преамбула
 
-1. ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.013.png)
-1. Вписуємо іп адрес та вказуємо юзернейм ubuntu ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.014.png)
-1. Вибираємо ssh ключ який скачали в поли use private key![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.015.png)
-1. Клікаємо -> ОК 
-1. Так виглядає все окей ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.016.png)
-1. Клонуємо репозиторій командою 
-   **git clone [https://github.com/Lucky-graf/DDoS_terraform_aws.git**](https://github.com/Lucky-graf/DDoS_terraform_aws.git)**
-1. Переходимо в папку:
+Перш за все, даний гайд слід використовувати виключно у навчальних цілях.
+
+Усім новим користувачам AWS надає безкоштовні кредити (гроші) для початку роботи. Саме за їх рахунок ми радимо проводити навчання.
+
+[Реєстрація у AWS](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sign-up-for-aws.html)
+
+
+## Початок роботи
+
+1. Клонуємо репозиторій 
+   **git clone [https://github.com/UA-TECH-POWER/DDoS_terraform_aws](https://github.com/UA-TECH-POWER/DDoS_terraform_aws)**
+2. Переходимо в папку:
 
 cd DDoS\_terraform\_aws/
 
-1. **Запускаємо баш-скрипт для інсталяції Терраформу:**
+## Встановлюємо terraform
 
+* **Ubuntu**: Запускаємо баш-скрипт для інсталяції Терраформу
+```bash
 sudo bash install\_terraform.sh
+```
+* **OSX (brew)**
+```bash
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+```
+* Інші платформи: йдемо по [лiнцi](https://www.terraform.io/downloads)
 
-1. **Результат буде такий: ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.017.png)**
-1. **Перед запуском тераформ створимо користувача для нього:**
+### Перевірка
+```bash
+terraform -v
+```
+![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.017.png)
+
+## Перед запуском тераформ створимо користувача для нього
 
 **(<https://console.aws.amazon.com/iamv2/home?#/users>) – тут сторінка із юзерами ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.018.png)**
 
@@ -47,7 +52,7 @@ sudo bash install\_terraform.sh
 
 1. **Повертаємось до введення команд! Команди для старту терраформу:**
    terraform init ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.024.png)
-1. ` `**terraform apply (тут треба ввести аксеси які ви отримали при створенні юзера в AWS)** 
+2. ` `**terraform apply (тут треба ввести аксеси які ви отримали при створенні юзера в AWS)** 
 
 ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.025.png)
 
@@ -75,15 +80,3 @@ sudo bash install\_terraform.sh
 
 **СЛАВА УКРАЇНІ!!!
 ГЕРОЯМ СЛАВА!!!**
-
-
-
-
-
-
-
-
-
-
-
-
