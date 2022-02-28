@@ -86,5 +86,5 @@ terraform -v
 **ЗА посиланням https://console.aws.amazon.com/billing/home?region=us-east-2#/freetier**
 ![image](https://user-images.githubusercontent.com/57416546/155974756-75fc17b0-ba3e-4518-bcae-30f61974bf96.png)
 
-#СЛАВА УКРАЇНІ!!!
-#ГЕРОЯМ СЛАВА!!!
+# СЛАВА УКРАЇНІ!!!
+# ГЕРОЯМ СЛАВА!!!
