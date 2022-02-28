@@ -52,9 +52,15 @@ terraform -v
 
 1. **Повертаємось до введення команд! Команди для старту терраформу:**
    terraform init ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.024.png)
-2. ` `**terraform apply (тут треба ввести аксеси які ви отримали при створенні юзера в AWS)**
+2. ` `**(тут треба ввести аксеси які ви отримали при створенні юзера в AWS)**
+ ![image](https://user-images.githubusercontent.com/57416546/155971695-18ed3b16-9fff-45a3-ab29-d56b9b10e99d.png)
+ **nano ddos.tf (вводимо ключі доступу до акаунту)**
+ ![image](https://user-images.githubusercontent.com/57416546/155972415-2871553d-aa97-48e5-8ff3-3a25dad6e7cc.png)
+
+**Для збереження Ctrl+O Enter**
+**Для виходу Ctrl+X** 
  
-4. ` `**На даному кроці обираємо ціль, кількість інстансів, порт** 
+4. ` `**terraform apply - На даному кроці обираємо ціль, кількість інстансів, порт** 
 ![image](https://user-images.githubusercontent.com/57416546/155970446-9fe93892-62ee-4396-a42d-cded4b3379a9.png)
 
 1. **Підтверджуємо атаку ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.026.png)**
