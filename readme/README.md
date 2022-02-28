@@ -82,8 +82,8 @@ terraform -v
 ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.031.png)
 
 **Якщо потрібно почати атаку заново – знову terraform apply**
-##Най головніше слідкуємо за часом ти машин
-**ЗА посиланням https://console.aws.amazon.com/billing/home?region=us-east-2#/freetier**
+## Най головніше слідкуємо за часом ти машин
+**ЗА посиланням** *https://console.aws.amazon.com/billing/home?region=us-east-2#/freetier*
 ![image](https://user-images.githubusercontent.com/57416546/155974756-75fc17b0-ba3e-4518-bcae-30f61974bf96.png)
 
 # СЛАВА УКРАЇНІ!!!
