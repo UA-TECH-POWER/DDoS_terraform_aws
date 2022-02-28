@@ -72,8 +72,8 @@ terraform -v
 **ДОДАТКОВА ІНФОРМАЦІЯ:** 
 
 **-Щоб зупинити атаку команад – terraform destroy**
-
-![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.029.png)
+*Пропускаємо всі внесення змінних будь-якою цифрою*
+![image](https://user-images.githubusercontent.com/57416546/155973636-5db270c5-6000-4db8-ab87-997d6b30bcac.png)
 
 ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.030.png)
 
