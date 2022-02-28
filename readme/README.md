@@ -54,26 +54,24 @@ terraform -v
    terraform init ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.024.png)
 2. ` `**(тут треба ввести аксеси які ви отримали при створенні юзера в AWS)**
  ![image](https://user-images.githubusercontent.com/57416546/155971695-18ed3b16-9fff-45a3-ab29-d56b9b10e99d.png)
- **nano ddos.tf (вводимо ключі доступу до акаунту)**
+2.1 **nano ddos.tf (вводимо ключі доступу до акаунту)**
  ![image](https://user-images.githubusercontent.com/57416546/155972415-2871553d-aa97-48e5-8ff3-3a25dad6e7cc.png)
-
-**Для збереження Ctrl+O Enter**
-**Для виходу Ctrl+X** 
+2.2**Для збереження Ctrl+O Enter**
+2.3**Для виходу Ctrl+X** 
  
-4. ` `**terraform apply - На даному кроці обираємо ціль, кількість інстансів, порт** 
+ ` `**terraform apply - На даному кроці обираємо ціль, кількість інстансів, порт** 
 ![image](https://user-images.githubusercontent.com/57416546/155970446-9fe93892-62ee-4396-a42d-cded4b3379a9.png)
 
 1. **Підтверджуємо атаку ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.026.png)**
 1. **Успішний результати** 
-
-![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.027.png)
+![image](https://user-images.githubusercontent.com/57416546/155973001-5fcdbca5-aaaf-4de7-8a2c-75972dfefc4f.png)
 
 **ТЕПЕР ТИ МОЧЕШ МОСКАЛЮК!
 ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.028.png)**
 
 **ДОДАТКОВА ІНФОРМАЦІЯ:** 
 
-**-щоб зупинити атаку (а це добре робити 50-60 хв після початку)  команад – terraform destroy**
+**-Щоб зупинити атаку команад – terraform destroy**
 
 ![](Aspose.Words.17159736-b752-4e21-913d-f3ae63d9de5f.029.png)
 
