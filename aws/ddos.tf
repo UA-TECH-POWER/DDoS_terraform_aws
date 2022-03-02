@@ -58,7 +58,7 @@ resource "aws_instance" "ddos" {
   key_name               = aws_key_pair.kozak.key_name
 
   provisioner "file" {
-    source      = "${abspath(path.root)}/atack.py"
+    source      = "${abspath(path.root)}/../atack.py"
     destination = "/tmp/atack.py"
   }
   connection {
