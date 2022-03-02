@@ -95,8 +95,7 @@ terraform -v
 
 **Якщо потрібно почати атаку заново – знову terraform apply**
 ## Най головніше слідкуємо за часом ти машин
-**ЗА посиланням** *https://console.aws.amazon.com/billing/home?region=us-east-2#/freetier*
-![image](https://user-images.githubusercontent.com/57416546/155974756-75fc17b0-ba3e-4518-bcae-30f61974bf96.png)
+**ЗА посиланням** *https://console.cloud.google.com/billing/*
 
 # СЛАВА УКРАЇНІ!!!
 # ГЕРОЯМ СЛАВА!!!
