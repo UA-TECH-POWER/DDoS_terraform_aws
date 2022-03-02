@@ -10,7 +10,7 @@
 **/*.tfplan
 **/.terraform/*
 **/.terraform.lock.hcl
-
+**/.terraform.tfstate.lock.info
 
 # SSH key
 kozak_rsa
